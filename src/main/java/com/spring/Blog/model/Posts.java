@@ -1,11 +1,10 @@
-package model;
+package com.spring.Blog.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-
 
 @Entity
 @Table(name="TB_POSTS")
@@ -14,7 +13,7 @@ public class Posts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    private String subject;
+    //    private String subject;
     @NotBlank // won't be able to have null or blank values
     private String author;
     @JsonFormat(shape =
