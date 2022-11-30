@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="TB_POSTS")
-public class Posts {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,8 +25,6 @@ public class Posts {
     @NotBlank
     private String title;
 
-//    public Posts() {
-//    }
 
     public Long getId() {
         return id;
