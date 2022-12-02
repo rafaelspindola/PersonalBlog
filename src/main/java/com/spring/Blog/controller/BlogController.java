@@ -43,6 +43,7 @@ public class BlogController {
     @PostMapping(path = "newpost")
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes) { // validates input from user
         if (result.hasErrors()) {
+            attributes.addFlashAttribute("message", "Check if all fields have been filled correctly.");
             return "redirect:/newpost"; // if it has errors, returns to newpost page
         }
         post.setDate(LocalDate.now()); // if it doesn't it saves local date and the post, also redirecting to main page with all posts
