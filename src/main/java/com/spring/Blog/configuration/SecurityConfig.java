@@ -3,7 +3,6 @@ package com.spring.Blog.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -32,10 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("Rafael").password("{noop}devjava").roles("ADMIN");
     } // user authenticated in memory who's able to access the blog
 
-    @Override
-    public void configure(WebSecurity web) throws Exception { // bootstrap cdn doesn't need it, other ones should add static directories
-        web.ignoring().antMatchers("/bootstrap/**");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception { // bootstrap cdn doesn't need it, other ones should add static directories
+//        web.ignoring().antMatchers("/bootstrap/**");
+//    }
 
 
 //@Bean // password encoder method
